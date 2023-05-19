@@ -1,3 +1,15 @@
+/*********************************************************************************
+*  WEB422 – Assignment 1
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Carmen Whitton Student ID: 102710217 Date: 2023,05,18
+*  Cyclic Link: https://cautious-belt-ant.cyclic.app/
+*
+********************************************************************************/ 
+
+
 const express = require('express');
 const cors = require('cors');
 const MoviesDB = require('./modules/moviesDB.js');
@@ -62,7 +74,7 @@ app.delete('/api/movies/:id', (req, res) => {
   });
 });
 
-db.initialize(process.env.MONGODB_CONN_STRING).then(()=>{
+db.initialize(process.env.MONGODB_CONN_STRING.toString()).then(()=>{
   app.listen(HTTP_PORT, ()=>{
       console.log(`server listening on: ${HTTP_PORT}`);
   });
